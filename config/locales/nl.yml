@@ -1,5 +1,5 @@
 # Dutch strings go here for Rails i18n
-en:
+nl:
   project_module_wiki_templates: "Wiki sjablonen"
   label_template: "Sjabloon"
   label_template_new: "Nieuw wiki sjabloon"
