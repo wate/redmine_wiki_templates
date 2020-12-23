@@ -15,5 +15,5 @@ class WikiTemplate < ActiveRecord::Base
   scope :sort_by_name, -> { order("name ASC") }
   scope :sort_by_proj, -> { joins(:project).order("projects.name ASC, name ASC") }
 
-  attr_accessible 'name', 'text', 'is_public', 'project', 'author'
+  attr_accessor 'name', 'text', 'is_public', 'project', 'author'
 end

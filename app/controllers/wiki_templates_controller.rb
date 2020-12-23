@@ -2,10 +2,10 @@ class WikiTemplatesController < ApplicationController
   unloadable
   menu_item :settings
   model_object WikiTemplate
-  before_filter :find_project_by_project_id, :only => [:new]
-  before_filter :find_model_object, :except => [:new, :preview]
-  before_filter :find_project_from_association, :except => [:new, :preview, :load]
-  before_filter :authorize, :except => [:preview, :load]
+  before_action :find_project_by_project_id, :only => [:new]
+  before_action :find_model_object, :except => [:new, :preview]
+  before_action :find_project_from_association, :except => [:new, :preview, :load]
+  before_action :authorize, :except => [:preview, :load]
 
   def new
     @wiki_template = WikiTemplate.new(:project => @project, :author => User.current)
