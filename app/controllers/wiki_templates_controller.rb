@@ -5,7 +5,7 @@ class WikiTemplatesController < ApplicationController
 
   before_action :find_project_by_project_id, :only => [:new, :update]
   before_action :find_model_object, :except => [:new, :preview]
-  before_action :find_project_from_association, :except => [:new, :preview, :load]
+  before_action :find_project_from_association, :except => [:new, :preview]
   before_action :authorize, :except => [:preview, :load]
 
   def new
@@ -51,22 +51,17 @@ class WikiTemplatesController < ApplicationController
   end
 
   def load
-    render :text => @wiki_template.text
+    render plain: @wiki_template.text
   end
 
   private
 
   def wiki_template_params
-    #local_params = params.permit!.to_h
     params.require(:wiki_template).permit(:name, :text, :is_public)
   end
   
   def find_user
     @user = User.current
   end
-  
-  #def find_project
-    # @project variable must be set before calling the authorize filter
-    #@project = Project.find(params[:project_id])
-  #end
+
 end
