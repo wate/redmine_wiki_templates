@@ -1,6 +1,6 @@
 # Japanese strings go here for Rails i18n
 ja:
-  project_module_wiki_templates: "Wiki templates"
+  project_module_wiki_templates: "Wikiテンプレート"
   label_template: "テンプレート"
   label_template_new: "新しいテンプレート"
   label_choose_template: "テンプレートを選択"
