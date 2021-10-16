@@ -1,4 +1,4 @@
-class CreateWikiTemplates < ActiveRecord::Migration
+class CreateWikiTemplates < ActiveRecord::Migration[4.2]
   def change
     create_table :wiki_templates do |t|
       t.integer    :author_id, :default => 0, :null => false
